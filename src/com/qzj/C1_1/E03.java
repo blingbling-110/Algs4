@@ -3,7 +3,7 @@ package com.qzj.C1_1;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
-public class E3 {
+public class E03 {
     public static void main(String[] args) {
         int i1 = StdIn.readInt();
         int i2 = StdIn.readInt();

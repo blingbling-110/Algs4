@@ -2,7 +2,7 @@ package com.qzj.C1_1;
 
 import edu.princeton.cs.algs4.StdOut;
 
-public class E6 {
+public class E06 {
     public static void main(String[] args) {
         int f = 0;
         int g = 1;

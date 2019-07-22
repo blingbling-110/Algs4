@@ -2,7 +2,7 @@ package com.qzj.C1_1;
 
 import edu.princeton.cs.algs4.StdIn;
 
-public class E9 {
+public class E09 {
     public static void main(String[] args) {
         System.out.print("请输入一个正整数：");
         int N = StdIn.readInt();

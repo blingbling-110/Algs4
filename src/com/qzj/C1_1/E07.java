@@ -3,7 +3,7 @@ package com.qzj.C1_1;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
-public class E7 {
+public class E07 {
     public static void main(String[] args) {
         char c = StdIn.readChar();
         if (c == 'a') {

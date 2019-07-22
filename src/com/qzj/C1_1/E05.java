@@ -2,7 +2,7 @@ package com.qzj.C1_1;
 
 import edu.princeton.cs.algs4.StdIn;
 
-public class E5 {
+public class E05 {
     public static void main(String[] args) {
         double x = StdIn.readDouble();
         double y = StdIn.readDouble();

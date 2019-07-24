@@ -1,6 +1,7 @@
 package com.qzj.C1_1;
 
 import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdRandom;
 
 import java.util.*;
 
@@ -127,13 +128,8 @@ public class E34 {
     }
     public static void task8() {
         double[] input = StdIn.readAllDoubles();
-        ArrayList<Double> list = new ArrayList<>();
-        for (double d: input) {
-            list.add(d);
-        }
-        Collections.shuffle(list);//    洗牌
-        Iterator it = list.iterator();// 列表迭代器
-        while (it.hasNext())
-            System.out.println(it.next());
+        StdRandom.shuffle(input);
+        for (double d : input)
+            System.out.println(d);
     }
 }

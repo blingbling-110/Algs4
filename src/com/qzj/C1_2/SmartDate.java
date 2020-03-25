@@ -3,9 +3,9 @@ package com.qzj.C1_2;
 import edu.princeton.cs.algs4.StdOut;
 
 public class SmartDate {
-    private final int month;
-    private final int day;
-    private final int year;
+    private int month;
+    private int day;
+    private int year;
 
     public SmartDate(int y, int m, int d) {
         if (y < 1 || m < 1 || m > 12 || d < 1 || d > 31)
@@ -17,6 +17,10 @@ public class SmartDate {
         this.month = m;
         this.day = d;
         this.year = y;
+    }
+
+    public SmartDate(String date) {
+        this(Integer.parseInt(date.split("/")[2]), Integer.parseInt(date.split("/")[0]), Integer.parseInt(date.split("/")[1]));
     }
 
     public int getMonth() {

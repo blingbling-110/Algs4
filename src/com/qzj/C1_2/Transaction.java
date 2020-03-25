@@ -13,6 +13,10 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public Transaction(String string) {
+        this(string.split("\\s+")[0], new SmartDate(string.split("\\s+")[1]), Double.parseDouble(string.split("\\s+")[2]));
+    }
+
     public String getCustomer() {
         return customer;
     }
@@ -34,6 +38,7 @@ public class Transaction {
         Transaction transaction2 = new Transaction("Lily", new SmartDate(2020, 3, 24), 10.0);
         StdOut.println(transaction1);
         StdOut.println(transaction1.equals(transaction2));
+        StdOut.println(new Transaction("Turing 5/22/1939 11.99"));
     }
 
     public boolean equals(Object x) {

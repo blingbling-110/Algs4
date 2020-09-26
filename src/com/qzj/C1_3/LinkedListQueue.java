@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Iterator;
 
-public class LinkedListStack<Item> implements Iterable<Item> {
+public class LinkedListQueue<Item> implements Iterable<Item> {
     private class ListIterator implements Iterator<Item> {
         private Node current = first;
 
@@ -33,20 +33,28 @@ public class LinkedListStack<Item> implements Iterable<Item> {
     }
 
     private Node first;
+    private Node last;
     private int num;
 
-    public void push(Item item) {
-        Node second = first;
-        first = new Node();
-        first.item = item;
-        first.next = second;
+    public void enqueue(Item item) {
+        Node secondLast = last;
+        last = new Node();
+        last.item = item;
+        if (!isEmpty()) {
+            secondLast.next = last;
+        }else {
+            first = last;
+        }
         num++;
     }
 
-    public Item pop() {
+    public Item dequeue() {
         Item ret = first.item;
         first = first.next;
         num--;
+        if (isEmpty()) {
+            last = first;
+        }
         return ret;
     }
 
@@ -60,16 +68,16 @@ public class LinkedListStack<Item> implements Iterable<Item> {
 
     //测试用例
     public static void main(String[] args) {
-        LinkedListStack<String> lls = new LinkedListStack<>();
+        LinkedListQueue<String> llq = new LinkedListQueue<>();
         while (!StdIn.isEmpty()) {
             String item = StdIn.readString();
             if (!item.equals("-")) {
-                lls.push(item);
+                llq.enqueue(item);
             }
-            else if (!lls.isEmpty()) {
-                StdOut.print(lls.pop() + " ");
+            else if (!llq.isEmpty()) {
+                    StdOut.print(llq.dequeue() + " ");
             }
         }
-        StdOut.println("（栈中还剩" + lls.size() + "个）");
+        StdOut.println("（队列中还剩" + llq.size() + "个）");
     }
 }
